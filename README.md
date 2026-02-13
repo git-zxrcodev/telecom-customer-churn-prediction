@@ -32,7 +32,7 @@ The dataset is **not included in this repository** due to size and licensing res
 - **Source:** [Kaggle Telco Customer Churn Dataset](https://www.kaggle.com/blastchar/telco-customer-churn)  
 - **License:** Data files © Original Authors  
 
-> To download the dataset, run the `data_downloading.ipynb` script included in this repo.
+> To download the dataset, run the `data_downloading.ipynb` notebook included in this repo.
 
 ---
 
