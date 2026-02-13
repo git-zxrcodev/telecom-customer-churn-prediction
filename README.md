@@ -1,72 +1,67 @@
-# Customer Churn — EDA & Predictive Modeling
+# Telecom Customer Churn Prediction
 
-## Focus: Exploratory data analysis, feature-driven churn modeling, retention strategy, stakeholder-ready outputs
+[![Python](https://img.shields.io/badge/python-3.10-blue)](https://www.python.org/)
 
-# TL;DR
+---
 
-This repository contains an end-to-end analysis and predictive modeling pipelines that identifie customers at high risk of churn and provide actionable, prioritized retention recommendations. Key findings show acute early-tenure churn risk, clear payment-related friction, and service/technical-support weaknesses (notably among Fiber customers). Models were developed to balance sensitivity (finding churners) and precision (reducing wasted outreach), enabling stakeholders to select a risk strategy that matches marketing budget and appetite.
+## Overview
+This project demonstrates an **end-to-end machine learning pipeline** for predicting customer churn, including:
 
-## Why this project
+- Data downloading & cleaning  
+- Exploratory data analysis (EDA)  
+- Feature engineering  
+- Model training & evaluation  
+- Actionable retention strategy
 
-Customer churn directly reduces revenue and increases acquisition costs. Predicting churn early — and understanding why it happens — allows the business to prioritize retention spend where it has the highest ROI. This project demonstrates the analytics and product thinking required to convert data into prioritized retention actions and measurable impact.
+The goal is to identify high-risk churn customers and provide stakeholders with prioritized recommendations to reduce churn and optimize marketing spend.
 
-## What I did
+---
 
-Performed EDA to surface the primary drivers of churn.
+## Problem
+Customer churn directly reduces revenue and increases acquisition costs. Predicting churn early — and understanding why it happens — allows the business to:
 
-Built and compared multiple supervised models (Logistic Regression, XGBoost, LightGBM, Random Forest) to produce churn risk scores at the customer level.
+- Prioritize retention spend efficiently  
+- Target high-risk cohorts with actionable interventions  
+- Maximize ROI on marketing and customer success initiatives  
 
-Created a recommended, prioritized retention plan (first 90 days) directly tied to EDA insights.
+---
 
-Produced stakeholder-facing artifacts (charts, suggested executive PDF, and a plan for an ROI calculator / dashboard).
+## Dataset
+The dataset is **not included in this repository** due to size and licensing restrictions.
 
-# Key EDA findings
+- **Source:** [Kaggle Telco Customer Churn Dataset](https://www.kaggle.com/blastchar/telco-customer-churn)  
+- **License:** Data files © Original Authors  
 
-High early-tenure churn (the “Danger Zone”)
+> To download the dataset, run the `data_downloading.ipynb` script included in this repo.
 
-Churn peaks in months 1–5 of tenure.
+---
 
-Among new customers (≤ 10 months) on month-to-month contracts, churn exceeds 50%.
+## Key Findings
+- **High early-tenure churn:** Most churn occurs in months 1–5.  
+- **Payment friction:** Customers using manual payment methods (checks) have higher churn.  
+- **Service mismatch:** Fiber customers without proper technical support show elevated churn risk.  
 
-Overall month-to-month churn: 56.89%.
+---
 
-Payment friction
+## Detailed Conclusion
+- **Located:** docs/Conclusion.md
 
-Manual payment methods (Electronic Check, Mailed Check) have materially higher churn (34.74%) vs automated billing (16.00%).
+---
 
-Effect is strongest in months 1–2 — suggests onboarding / billing friction.
+## Modeling Summary
+| Model                | Strength                              | Use Case                                     |
+|---------------------|--------------------------------------|--------------------------------------------|
+| Logistic Regression  | High recall / aggressive             | Catch most churners                         |
+| XGBoost              | Sensitive to non-linear interactions | Robust structure, good balance of metrics  |
+| LightGBM             | Balanced                             | Trade-off between sensitivity & false positives |
+| Random Forest        | Conservative                         | Minimize wasted marketing spend             |
 
-Service mismatch (Fiber vs DSL)
+---
 
-Long-tenure Fiber customers show elevated churn relative to DSL, indicating quality, pricing, or expectation gaps.
+## Usage
 
-Lack of technical support
+1. **Clone the repository**
+```bash
+git clone https://github.com/git-zxrcodev/telecom-customer-churn-prediction
+cd telecom-churn-prediction
 
-Customers without technical support churn at 41.65%, a signal of unresolved service issues — particularly relevant for Fiber.
-
-# Retention plan (first 90 days) — prioritized
-
-Proactive onboarding / Health Checks (months 0–2)
-Quick technical and billing checks to reduce early attrition (target month-to-month subscribers and manual payers).
-
-Short-term incentives (months 1–4)
-Time-bound value offers for high-risk cohorts to improve early conversion to longer contracts.
-
-Automated-billing incentive
-One-time credit/discount to move manual payers to autopay — reduces billing friction.
-
-Contract migration nudges
-Loyalty offers emphasizing long-term value for month-to-month customers.
-
-Technical support & infrastructure focus for Fiber
-Prioritize support outreach and stability improvements for at-risk Fiber customers.
-
-# Modeling summary & interpretation
-
-Logistic Regression — most aggressive: captures nearly 80% of churners (high recall). Good when missing churners is costly and marketing budget can tolerate false positives.
-
-XGBoost — second-most aggressive: strong sensitivity with more structure for non-linear feature interactions.
-
-LightGBM — stable / balanced: trade-off between sensitivity and false positives.
-
-Random Forest — conservative: fewer false positives, better when reducing wasted spend is the primary goal.
