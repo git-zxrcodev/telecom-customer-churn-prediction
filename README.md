@@ -32,14 +32,31 @@ The dataset is **not included in this repository** due to size and licensing res
 - **Source:** [Kaggle Telco Customer Churn Dataset](https://www.kaggle.com/blastchar/telco-customer-churn)  
 - **License:** Data files © Original Authors  
 
-> To download the dataset, run the `data_downloading.ipynb` notebook included in this repo.
+> To download the dataset, run the `01_data_downloading.ipynb` notebook included in this repo.
 
 ---
 
-## Key Findings
-- **High early-tenure churn:** Most churn occurs in months 1–5.  
-- **Payment friction:** Customers using manual payment methods (checks) have higher churn.  
-- **Service mismatch:** Fiber customers without proper technical support show elevated churn risk.  
+## Usage
+
+1. Environment Setup
+
+Clone the repository and install dependencies:
+```bash
+git clone https://github.com/git-zxrcodev/telecom-customer-churn-prediction
+cd telecom-churn-prediction
+pip install -r requirements.txt
+```
+2. Data Pipeline Execution
+
+Follow the numbered notebooks/scripts in order:
+
+    Extract: Run 01_download_data.ipynb to download rhe dataset.
+
+    Analyze: EDA in 02_eda_data.ipynb.
+
+    Feature Engineering: FE in 03_feature_engineering.ipynb.
+
+    Models: Train models in 04_train_evaluate_models.ipynb.
 
 ---
 
@@ -58,10 +75,4 @@ The dataset is **not included in this repository** due to size and licensing res
 
 ---
 
-## Usage
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/git-zxrcodev/telecom-customer-churn-prediction
-cd telecom-churn-prediction
 
