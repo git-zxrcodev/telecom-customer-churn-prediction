@@ -197,13 +197,12 @@ Each model is persisted as a `.joblib` file alongside a JSON sidecar containing 
 - Python 3.12
 - `pip`
 - `git`
-- A [Kaggle API key](https://www.kaggle.com/docs/api) configured (`~/.kaggle/kaggle.json`) — required only for re-downloading the raw data
 
 ### Setup
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/telecom-customer-churn-prediction.git
+git clone https://github.com/git-zxrcodev/telecom-customer-churn-prediction
 cd telecom-customer-churn-prediction
 
 # 2. Create and activate a virtual environment
