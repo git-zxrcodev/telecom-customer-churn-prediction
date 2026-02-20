@@ -116,23 +116,23 @@ Overall churn rate is **~26%**, with a heavily imbalanced dataset (~5,163 retain
 
 ### Top Churn Drivers (by Mutual Information & Correlation)
 
-- **Month-to-month contract** | 50%+ churn rate in the first 5 months of tenure — the single strongest driver
-- **No online security** | ~20.8% weighted churn; marker of low service engagement
-- **No tech support** | ~20.6% weighted churn; especially acute among fiber optic users
-- **Fiber optic internet** | ~18.4% weighted churn; price sensitivity or service-quality gap vs. competitors
-- **No partner / no dependents** | 17–22% weighted churn; less "anchored" customers
-- **Electronic check payment** | ~15.2% weighted churn; friction or payment-failure risk
-- **High monthly charges ($50–$110)** | Positive correlation with churn
-- **Early tenure (0–4 months)** | ~50%+ churn for month-to-month customers — the critical onboarding window
+- **Month-to-month contract**: 50%+ churn rate in the first 5 months of tenure — the single strongest driver
+- **No online security**: ~20.8% weighted churn; marker of low service engagement
+- **No tech support**: ~20.6% weighted churn; especially acute among fiber optic users
+- **Fiber optic internet**: ~18.4% weighted churn; price sensitivity or service-quality gap vs. competitors
+- **No partner / no dependents**: 17–22% weighted churn; less "anchored" customers
+- **Electronic check payment**: ~15.2% weighted churn; friction or payment-failure risk
+- **High monthly charges ($50–$110)**: Positive correlation with churn
+- **Early tenure (0–4 months)**: ~50%+ churn for month-to-month customers — the critical onboarding window
 
 ### Loyalty Signal
 
-- **Tenure** is the strongest negative predictor of churn — the longer a customer stays, the less likely they are to leave. Customers on two-year contracts show dramatically lower churn (~2–3%) compared to month-to-month (~43%).
+- **Tenure**: the strongest negative predictor of churn — the longer a customer stays, the less likely they are to leave. Customers on two-year contracts show dramatically lower churn (~2–3%) compared to month-to-month (~43%).
 
 ### Negligible Factors
 
-- **Gender** — virtually no churn difference (Female 26.9% vs Male 26.2%); excluded from modelling.
-- **Phone service** — limited standalone predictive lift; excluded from modelling.
+- **Gender**: virtually no churn difference (Female 26.9% vs Male 26.2%); excluded from modelling.
+- **Phone service**: limited standalone predictive lift; excluded from modelling.
 
 ---
 
@@ -182,11 +182,11 @@ Each model is persisted as a `.joblib` file alongside a JSON sidecar containing 
 
 ## 9. Retention Plan
 
-- Proactive onboarding campaign (check-in calls at month 1 & 3, welcome bundle) | New month-to-month customers, tenure 0–5 months
-- Time-limited incentive to migrate M2M → annual contract | High-risk M2M customers
-- Bundle online security & tech support into mid-tier plans by default | Customers without add-ons
-- Proactive tech support outreach for new fiber optic customers | Fiber optic × no tech support cohort
-- Incentivise switch to automatic payment ($5/month discount for auto-pay) | Electronic check users
+- Proactive onboarding campaign (check-in calls at month 1 & 3, welcome bundle), targeting new month-to-month customers, tenure 0–5 months
+- Time-limited incentive to migrate M2M → annual contract, aiming at high-risk M2M customers
+- Bundle online security & tech support into mid-tier plans by default for customers without add-ons
+- Proactive tech support outreach for new fiber optic customers, using fiber optic × no tech support cohort feature
+- Incentivise switch to automatic payment ($5/month discount for auto-pay), transitioning electronic check users
 
 ---
 
