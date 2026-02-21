@@ -6,17 +6,27 @@ An end-to-end machine learning project that identifies customers at risk of chur
 
 ## Table of Contents
 
-1. [Business Problem & Objective](#1-business-problem--objective)
-2. [Dataset](#2-dataset)
-3. [Project Structure](#3-project-structure)
-4. [Tech Stack](#4-tech-stack)
-5. [Notebooks Overview](#5-notebooks-overview)
-6. [Key EDA Insights](#6-key-eda-insights)
-7. [Feature Engineering](#7-feature-engineering)
-8. [Modelling Results](#8-modelling-results)
-9. [Retention Plan](#9-retention-plan)
-10. [Run This Project Locally](#10-run-this-project-locally)
-11. [Contact](#11-contact)
+- [Telecom Customer Churn Prediction](#telecom-customer-churn-prediction)
+  - [Table of Contents](#table-of-contents)
+  - [1. Business Problem \& Objective](#1-business-problem--objective)
+  - [2. Dataset](#2-dataset)
+    - [Feature Glossary](#feature-glossary)
+  - [3. Project Structure](#3-project-structure)
+  - [4. Tech Stack](#4-tech-stack)
+  - [5. Notebooks Overview](#5-notebooks-overview)
+  - [6. Key EDA Insights](#6-key-eda-insights)
+    - [Top Churn Drivers (by Mutual Information \& Correlation)](#top-churn-drivers-by-mutual-information--correlation)
+    - [Loyalty Signal](#loyalty-signal)
+    - [Negligible Factors](#negligible-factors)
+  - [7. Feature Engineering](#7-feature-engineering)
+  - [8. Modelling Results](#8-modelling-results)
+  - [9. Retention Plan](#9-retention-plan)
+  - [10. Run This Project Locally](#10-run-this-project-locally)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Run the Notebooks](#run-the-notebooks)
+    - [Deactivate the Virtual Environment](#deactivate-the-virtual-environment)
+  - [11. Contact](#11-contact)
 
 ---
 
@@ -72,7 +82,8 @@ telecom-customer-churn-prediction/
 ├── notebooks/
 │   ├── 01_ingestion_and_eda.ipynb        # Data ingestion, wrangling & EDA
 │   ├── 02_feature_engineering.ipynb      # Chi-squared tests & feature creation
-│   └── 03_predictive_modeling.ipynb      # Model training, evaluation & inference
+│   ├── 03_predictive_modeling.ipynb      # Model training, evaluation & inference
+│   └── 04_transform_for_dashboard.ipynb  # Label mapping & dashboard CSV export
 │
 ├── src/
 │   ├── clean_column_names.py    # Standardises column names to snake_case
@@ -104,9 +115,10 @@ telecom-customer-churn-prediction/
 
 ## 5. Notebooks Overview
 
-- `01_ingestion_and_eda.ipynb` | Downloads data via `kagglehub`, validates schema, wrangles types, performs full univariate & multivariate EDA (correlation, mutual information, heatmaps), saves processed CSV 
-- `02_feature_engineering.ipynb` | Runs chi-squared tests on all categorical features, creates 5 engineered features, drops statistically non-significant and redundant columns, saves featured CSV 
-- `03_predictive_modeling.ipynb` | Trains four classifiers with cross-validated hyperparameter search and imbalance handling, evaluates on held-out test set, saves model artefacts + JSON metadata, demonstrates inference on a new customer 
+- `01_ingestion_and_eda.ipynb` | Downloads data via `kagglehub`, validates schema, wrangles types, performs full univariate & multivariate EDA (correlation, mutual information, heatmaps), saves processed CSV
+- `02_feature_engineering.ipynb` | Runs chi-squared tests on all categorical features, creates 5 engineered features, drops statistically non-significant and redundant columns, saves featured CSV
+- `03_predictive_modeling.ipynb` | Trains four classifiers with cross-validated hyperparameter search and imbalance handling, evaluates on held-out test set, saves model artefacts + JSON metadata, demonstrates inference on a new customer
+- `04_transform_for_dashboard.ipynb` | Translates model-ready encodings (ordinal ints, booleans) into human-readable category labels and exports a dashboard-ready CSV to `data/04_dashboard/`
 
 ---
 
@@ -223,9 +235,10 @@ pip install -r requirements.txt
 Execute the notebooks **in order**:
 
 ```
-notebooks/01_ingestion_and_eda.ipynb      ← downloads & explores data
-notebooks/02_feature_engineering.ipynb   ← engineers features
-notebooks/03_predictive_modeling.ipynb   ← trains & evaluates models
+notebooks/01_ingestion_and_eda.ipynb      # downloads & explores data
+notebooks/02_feature_engineering.ipynb   # engineers features
+notebooks/03_predictive_modeling.ipynb   # trains & evaluates models
+notebooks/04_transform_for_dashboard.ipynb # prepares dashboard CSV
 ```
 
 The raw data will be downloaded automatically on the first run of notebook 01 via `kagglehub`.
