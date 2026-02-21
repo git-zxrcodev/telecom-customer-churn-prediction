@@ -24,7 +24,6 @@ An end-to-end machine learning project that identifies customers at risk of chur
   - [10. Dashboard](#10-dashboard)
     - [Data Source](#data-source)
     - [How to Open](#how-to-open)
-    - [What It Covers](#what-it-covers)
   - [11. Run This Project Locally](#11-run-this-project-locally)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -36,7 +35,7 @@ An end-to-end machine learning project that identifies customers at risk of chur
 
 ## 1. Business Problem & Objective
 
-Acquiring a new customer costs significantly more than retaining an existing one. For a telecom provider with a **~26% churn rate**, understanding *why* customers leave — and acting before they do — is a direct revenue lever.
+Acquiring a new customer costs significantly more than retaining an existing one. For a telecom provider with a high **~26% churn rate**, understanding *why* customers leave — and acting before they do — is a direct revenue lever.
 
 **Objective:** Analyse customer records to uncover the main drivers of churn, engineer predictive features, and train classification models that can score customers by churn risk so the business can target the right people with the right retention offer at the right time.
 
@@ -141,7 +140,7 @@ telecom-customer-churn-prediction/
 
 ## 6. Key EDA Insights
 
-Overall churn rate is **~26%**, with a heavily imbalanced dataset (~5,163 retained vs ~1,869 churned).
+Overall churn rate is **~26%**, which is high and motivates the project, with a heavily imbalanced dataset (~5,163 retained vs ~1,869 churned).
 
 ### Top Churn Drivers (by Mutual Information & Correlation)
 
@@ -197,7 +196,7 @@ Five features were engineered from the raw columns after validating statistical 
 
 ## 8. Modelling Results
 
-**Train / test split:** 80 / 20 stratified (5,625 train, 1,407 test). All models tuned with 5-fold stratified cross-validation optimising ROC-AUC.
+**Train / test split:** 80 / 20 stratified. All models tuned with 5-fold stratified cross-validation optimising ROC-AUC.
 
 | Model | Accuracy | Precision | Recall | F1 | ROC-AUC | Imbalance Strategy |
 |---|:---:|:---:|:---:|:---:|:---:|---|
@@ -239,18 +238,6 @@ The dashboard is powered by `data/04_dashboard/customer_churn_dashboard.csv`, ge
 1. Install Power BI Desktop
 2. Open `dashboards/customer_churn_dashboard.pbix`
 3. If prompted to refresh data, point the data source to `data/04_dashboard/customer_churn_dashboard.csv` in the local clone
-
-### What It Covers
-
-| Area | Insight |
-|---|---|
-| **Churn overview** | Overall churn rate & volume; retained vs. churned breakdown |
-| **Contract & tenure** | Churn rate heatmap by contract type × tenure band; critical 0–5-month window highlighted |
-| **Service add-ons** | Churn comparison for customers with / without online security and tech support |
-| **Internet service** | Churn split across DSL, Fiber optic, and No internet service cohorts |
-| **Payment method** | Churn volume by payment type; electronic-check vs. auto-pay gap |
-| **Monthly charges** | Charge distribution for churned vs. retained customers |
-| **Risk segments** | High / medium / low risk tenure bands and engineered flag breakdowns (`fiber_no_support`, `manual_payment_early`, `high_risk_new_monthly`) |
 
 ---
 
