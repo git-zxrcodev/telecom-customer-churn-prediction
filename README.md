@@ -128,14 +128,21 @@ Overall churn rate is **~26%**, with a heavily imbalanced dataset (~5,163 retain
 
 ### Top Churn Drivers (by Mutual Information & Correlation)
 
-- **Month-to-month contract**: 50%+ churn rate in the first 5 months of tenure — the single strongest driver
+- **Month-to-month contract & early tenure**: 50%+ churn rate in the first 5 months of tenure — the single strongest driver & the critical onboarding window
+
+![churn rate by tenure and contract](images/churn%20rate%20by%20tenure%20and%20contract%20type.png)
+
 - **No online security**: ~20.8% weighted churn; marker of low service engagement
 - **No tech support**: ~20.6% weighted churn; especially acute among fiber optic users
 - **Fiber optic internet**: ~18.4% weighted churn; price sensitivity or service-quality gap vs. competitors
 - **No partner / no dependents**: 17–22% weighted churn; less "anchored" customers
 - **Electronic check payment**: ~15.2% weighted churn; friction or payment-failure risk
+
+![churn volume by tenure and payment method](images/churn%20volume%20by%20tenure%20and%20payment%20method.png)
+
 - **High monthly charges ($50–$110)**: Positive correlation with churn
-- **Early tenure (0–4 months)**: ~50%+ churn for month-to-month customers — the critical onboarding window
+
+![monthly charges distribution by churn](images/monthly%20charges%20distribution%20by%20churn.png)
 
 ### Loyalty Signal
 
@@ -145,10 +152,6 @@ Overall churn rate is **~26%**, with a heavily imbalanced dataset (~5,163 retain
 
 - **Gender**: virtually no churn difference (Female 26.9% vs Male 26.2%); excluded from modelling.
 - **Phone service**: limited standalone predictive lift; excluded from modelling.
-
-![churn rate by tenure and contract]("images/churn rate by tenure and contract type.png")
-
-![churn volume by tenure and payment method]("images/churn volume by tenure and payment method.png")
 
 ---
 
