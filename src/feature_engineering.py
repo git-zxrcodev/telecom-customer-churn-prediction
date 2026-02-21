@@ -32,20 +32,20 @@ def feature_engineering(df: pd.DataFrame, drop_replaced: bool = False) -> pd.Dat
     """
     df = df.copy()
 
-    # --- Validation ----------------------------------------------------------
+    # Validation
     assert (df['tenure'] >= 1).all(), (
         "tenure contains values < 1. Rows with tenure == 0 should be dropped "
         "during preprocessing (they have NaN total_charges)."
     )
 
-    # --- Tenure risk category ------------------------------------------------
+    # Tenure risk category
     df.loc[:, 'high_risk_tenure'] = pd.cut(
         df['tenure'],
         bins=[0, 4, 12, 100],
         labels=['high_risk_category', 'medium_risk_category', 'low_risk_category']
     )
 
-    # --- Contract stability (ordinal) ----------------------------------------
+    # Contract stability (ordinal)
     contract_stability = {'Month-to-month': 1, 'One year': 2, 'Two year': 3}
     df['contract_stability'] = df['contract'].map(contract_stability)
     assert df['contract_stability'].notna().all(), (
@@ -53,7 +53,7 @@ def feature_engineering(df: pd.DataFrame, drop_replaced: bool = False) -> pd.Dat
         f"{df.loc[df['contract_stability'].isna(), 'contract'].unique().tolist()}"
     )
 
-    # --- Binary interaction features -----------------------------------------
+    # Binary interaction features
     df['fiber_no_support'] = (
         (df['internet_service'] == 'Fiber optic') &
         (df['tech_support'] == 'No')
@@ -77,7 +77,7 @@ def feature_engineering(df: pd.DataFrame, drop_replaced: bool = False) -> pd.Dat
 
     df[new_boolean_features] = df[new_boolean_features].astype(bool)
 
-    # --- Optionally drop columns replaced by engineered features -------------
+    # Optionally drop columns replaced by engineered features
     if drop_replaced:
         cols_present = [c for c in _COLS_TO_DROP if c in df.columns]
         df = df.drop(columns=cols_present)
