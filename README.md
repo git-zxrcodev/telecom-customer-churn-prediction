@@ -146,9 +146,9 @@ Overall churn rate is **~26%**, with a heavily imbalanced dataset (~5,163 retain
 - **Gender**: virtually no churn difference (Female 26.9% vs Male 26.2%); excluded from modelling.
 - **Phone service**: limited standalone predictive lift; excluded from modelling.
 
-![churn rate by tenure and contract]("../images/churn rate by tenure and contract type.png")
+![churn rate by tenure and contract]("images/churn rate by tenure and contract type.png")
 
-![churn volume by tenure and payment method]("../images/churn volume by tenure and payment method.png")
+![churn volume by tenure and payment method]("images/churn volume by tenure and payment method.png")
 
 ---
 
