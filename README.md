@@ -140,7 +140,7 @@ Overall churn rate is **~26%**, with a heavily imbalanced dataset (~5,163 retain
 
 ![churn volume by tenure and payment method](images/churn%20volume%20by%20tenure%20and%20payment%20method.png)
 
-- **High monthly charges ($50–$110)**: Positive correlation with churn
+- **High monthly charges ($70–$110)**: Positive correlation with churn
 
 ![monthly charges distribution by churn](images/monthly%20charges%20distribution%20by%20churn.png)
 
