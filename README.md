@@ -30,7 +30,7 @@ Acquiring a new customer costs significantly more than retaining an existing one
 
 ## 2. Dataset
 
-- **Source** | [IBM Telco Customer Churn — Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+- **Source** | [Telco Customer Churn — Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 - **Records** | 7,043 customers
 - **Features** | 21 (demographics, services subscribed, contract & billing)
 - **Target** | `Churn` — Yes / No
